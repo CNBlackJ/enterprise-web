@@ -1,14 +1,21 @@
 <template>
   <div>
     <navbar></navbar>
-    <el-main>
-      <div class="block">
+    <el-main class="main-block">
+      <div class="block lg-carousel">
         <el-carousel height="420px">
           <el-carousel-item v-for="item in 3" :key="item">
             <h3>{{ item }}</h3>
           </el-carousel-item>
         </el-carousel>
       </div>
+      <div class="block sm-carousel">
+          <el-carousel height="370px">
+            <el-carousel-item v-for="item in 3" :key="item">
+              <h3>{{ item }}</h3>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
       <prodcard></prodcard>
       <solution></solution>
     </el-main>
@@ -18,7 +25,7 @@
 
 <script>
 import navbar from '../../components/NavBar'
-import footer from '../../components/Footer'
+import ewFooter from '../../components/EwFooter'
 import prodcard from '../../components/ProdCard'
 import solution from '../../components/Solution'
 
@@ -29,7 +36,7 @@ export default {
   },
   components: {
     navbar,
-    'ew-footer': footer,
+    'ew-footer': ewFooter,
     prodcard,
     solution
   }
@@ -51,5 +58,22 @@ export default {
 
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
+}
+
+@media (max-width: 768px) {
+  .main-block {
+    margin-top: 50px;
+    padding: 0;
+  }
+
+  .lg-carousel {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .sm-carousel {
+    display: none;
+  }
 }
 </style>

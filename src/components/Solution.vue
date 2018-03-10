@@ -2,7 +2,7 @@
   <div class="solution-block">
     <el-row>
       <el-col :lg="{span:8, offset: 3, push: (i % 2 == 0) ? 1 : 0, pull: (i % 2 == 1) ? 2 : 0}" :span="12" v-for="(solution, i) in solutions" :key="i"  :class="{ 'solution-right': (i % 2 === 0), 'solution-left': (i % 2 === 1) }" >
-        <el-card>
+        <el-card class="lg-solution">
           <img :src="'/static/' + solution.img" class="image">
           <div class="solution-content">
             <el-row>
@@ -11,13 +11,21 @@
                   <span class="solution-title">{{ solution.title }}</span>
                   <div class="solution-detail">
                     {{ solution.description }}
-                    <div class="el-icon-arrow-right"></div>
+                    <i class="el-icon-arrow-right"></i>
                   </div>
                 </el-col>
               </a>
             </el-row>
           </div>
         </el-card>
+
+        <el-col :xs="{span: 12, push: (i % 2 == 0) ? 3 : 0, pull: (i % 2 == 1) ? 1 : 0}" class="sm-solution">
+          <div class="sm-image" v-bind:style="{'background-image': `url('/static/${solution.img}')`}">
+            <div class="solution-content">
+              <div class="solution-title">{{ solution.title }}</div>
+            </div>
+          </div>
+        </el-col>
       </el-col>
     </el-row>
   </div>
@@ -112,5 +120,37 @@ a {
 
 .solution-arrow {
   font-size: 3em;
+}
+
+@media (max-width: 768px) {
+  .lg-solution {
+    display: none;
+  }
+
+  .sm-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 160px;
+    width: 160px;
+  }
+
+  .solution-content {
+    padding-top: 120px;
+  }
+
+  .solution-title {
+    background-color: rgba(0,0,0,.5);
+    text-align: center;
+    font-size: 6vw;
+    color: #eeeeee;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 769px) {
+  .sm-solution {
+    display: none;
+  }
 }
 </style>

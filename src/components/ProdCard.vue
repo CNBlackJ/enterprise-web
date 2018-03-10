@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="prod-cards">
     <div class="block" v-for="(card, i) in cards" :key="i">
       <el-row class="card" v-bind:class="{ 'card-bg': (i % 2 === 1) }">
-        <el-col v-if="i === 0"  :lg="{span: 8, offset: 2, push: 1}" :span="12">
+        <el-col v-if="i === 0"  :lg="{span: 8, offset: 2, push: 1}" :xs="{span:24}" :span="12">
           <img :src="'/static/' + card.img" class="card-img">
         </el-col>
-        <el-col :lg="{ span: 8, offset: 2, push:(i % 2 === 0) ? 0 : 1 }" :span="12">
+        <el-col :lg="{ span: 8, offset: 2, push:(i % 2 === 0) ? 0 : 1 }" :xs="{span:24}" :span="12">
           <div class="card-content">
             <span class="card-title">{{card.title}}</span>
             <div class="card-intro">
@@ -17,7 +17,7 @@
             </div>
           </div>
         </el-col>
-        <el-col v-if="i === 1"  :lg="{span: 8, offset: 2}" :span="12">
+        <el-col v-if="i === 1" :lg="{span: 8, offset: 2}" :xs="{span:24}" :span="12">
             <img :src="'/static/' + card.img" class="card-img">
           </el-col>
       </el-row>
@@ -48,8 +48,13 @@ export default {
 </script>
 
 <style scoped>
+
+.prod-cards {
+  padding: 50px 0 30px 0;
+}
+
 .card {
-  padding: 100px 0 50px 0;
+  padding-bottom: 25px;
 }
 
 .card-bg {
@@ -75,5 +80,20 @@ export default {
   font-size: 1vw;
   line-height: 30px;
   margin: 10% 0 10% 0;
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    text-align: center;
+    padding: 10px 0 10px 0;
+  }
+
+  .card-title {
+    font-size: 6vw;
+  }
+
+  .card-intro {
+    margin: 2% 0 5% 0;
+  }
 }
 </style>

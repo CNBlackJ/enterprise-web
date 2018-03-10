@@ -1,29 +1,23 @@
 <template>
   <div class="footer">
     <el-row class="footer-desc">
-      <el-col :span="7" class="contact">
+      <el-col :xs="{span: 24}" :span="7" class="contact">
         <h2>联系我们</h2>
         <div>邮箱：123@123.com</div>
         <div>电话：010-123456</div>
         <div>地址：北京市北京区北京路001号</div>
         <div>时间：周一到周五 9:00～18:00</div>
       </el-col>
-      <el-col :span="7" class="about">
+      <el-col :xs="{span: 24}" :span="7" class="about">
         <h2>关于我们</h2>
-        <div>
-          <a href="#">公司文化</a>
-        </div>
-        <div>
-          <a href="#">合作联系</a>
-        </div>
-        <div>
-          <a href="#">加入我们</a>
-        </div>
-        <div>
-          <a href="#">品牌物料</a>
-        </div>
+        <el-row>
+          <el-col :xs="{span:6}" :span="24"><a href="#">公司文化</a></el-col>
+          <el-col :xs="{span:6}" :span="24"><a href="#">合作联系</a></el-col>
+          <el-col :xs="{span:6}" :span="24"><a href="#">加入我们</a></el-col>
+          <el-col :xs="{span:6}" :span="24"><a href="#">品牌物料</a></el-col>
+        </el-row>
       </el-col>
-      <el-col :span="10" class="news">
+      <el-col :xs="{span: 24}" :span="10" class="news">
         <h2>公司动态</h2>
         <div>
           <a href="#">合作 | 2018年与顺丰合作，共同打造物流新局面</a>
@@ -50,7 +44,7 @@
 
 <script>
 export default {
-  name: 'footer',
+  name: 'ew-footer',
   data () {
     return {}
   }
@@ -82,5 +76,11 @@ a {
 
 .copyright-detail {
   padding: 1% 0 1% 0;
+}
+
+@media(max-width: 768px) {
+  .footer-desc {
+    font-size: 4vw;
+  }
 }
 </style>
