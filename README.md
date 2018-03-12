@@ -1,4 +1,4 @@
-# nuxt-demo
+# enterprise-web
 
 > Nuxt.js project
 
