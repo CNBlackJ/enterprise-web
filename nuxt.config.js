@@ -34,5 +34,11 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  /*
+  ** Plugins
+  */
+  plugins: [
+    '~/plugins/iView'
+  ]
 }
