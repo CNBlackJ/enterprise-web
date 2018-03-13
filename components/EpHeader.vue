@@ -19,11 +19,42 @@
 		height: 100%;
 		position: absolute;
 	}
+
+	@media(max-width: 768px) {
+		.lg-header {
+			display: none;
+		}
+
+		.xs-header {
+			background-color: #495060;
+		}
+
+		.xs-logo {
+			padding: 10% 0 5%;
+		}
+
+		.xs-logo-img {
+			width: 100%;
+			height: 100%;
+			padding: 10%;
+		}
+
+		.xs-menu {
+			padding: 2%;
+		}
+
+		.xs-menu-btn {
+			width: 48px;
+			height: 48px;
+			font-size: 30px;
+			text-align: center;
+		}
+	}
 </style>
 
 <template>
 	<div>
-		<Header :style="{position: 'fixed', width: '100%', 'z-index': 1}">
+		<Header class="lg-header" :style="{position: 'fixed', width: '100%', 'z-index': 1}">
 			<Menu mode="horizontal" theme="dark" active-name="1">
 				<div class="layout-logo">
 					<img class="logo" src="~/static/logo.png">
@@ -36,6 +67,19 @@
 				</div>
 			</Menu>
 		</Header>
+
+		<div class="xs-header">
+			<Row>
+				<Col :span="6">
+					<div class="xs-logo">
+						<img class="xs-logo-img" src="~/static/logo.png">
+					</div>
+				</Col>
+				<Col class="xs-menu" :span="4" offset="14">
+					<Button class="xs-menu-btn" type="primary" shape="circle" icon="grid"></Button>
+				</Col>
+			</Row>
+		</div>
 	</div>
 </template>
 
