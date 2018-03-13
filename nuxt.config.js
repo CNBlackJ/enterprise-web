@@ -39,6 +39,7 @@ module.exports = {
   ** Plugins
   */
   plugins: [
-    '~/plugins/iView'
+    '~/plugins/iView',
+    '~/plugins/vueLightTimeline'
   ]
 }
