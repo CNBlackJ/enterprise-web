@@ -27,6 +27,9 @@
 
 		.xs-header {
 			background-color: #495060;
+			position: fixed;
+			width: 100%;
+			z-index: 1;
 		}
 
 		.xs-logo {
@@ -48,6 +51,12 @@
 			height: 48px;
 			font-size: 30px;
 			text-align: center;
+		}
+	}
+
+	@media(min-width: 769px) {
+		.xs-header {
+			display: none;
 		}
 	}
 </style>
