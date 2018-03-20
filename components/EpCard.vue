@@ -48,6 +48,16 @@
       text-align: center;
       padding: 2% 0;
     }
+
+		.card-title {
+			font-size: 6vw;
+			padding-bottom: 4vw;
+		}
+
+		.card-detail {
+			font-size: 4vw;
+			padding-bottom: 2vw;
+		}
   }
 
 </style>

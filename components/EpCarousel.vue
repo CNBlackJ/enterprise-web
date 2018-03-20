@@ -1,10 +1,10 @@
 <style scoped>
 	.carousel {
 		margin-top: 64px;
-		width: 100%;
+		max-width: 100%;
 	}
 	.carsousel-img {
-		width: 100%;
+		max-width: 100%;
 	}
 </style>
 

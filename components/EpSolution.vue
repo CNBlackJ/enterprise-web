@@ -23,6 +23,16 @@
   .solution-desc {
     font-size: 1vw;
   }
+
+  @media (max-width: 768px) {
+    .solution-card-left {
+      padding: 0 1% 2% 2%;
+    }
+
+    .solution-card-rigth {
+      padding: 0 2% 2% 1%;
+    }
+  }
 </style>
 
 <template>
@@ -46,7 +56,7 @@
         solutions: [
           {
             title: '种类1',
-            desc: '面向该种类，利用互联网制定完整解决方案，让改变随时发生',
+            desc: '利用互联网制定完整解决方案，让改变随时发生',
             img: 'solution1.png'
           },
           {
@@ -66,7 +76,7 @@
           },
           {
             title: '种类5',
-            desc: '产品具备抗腐蚀的特点，在室外使用能很好的保证使用寿命',
+            desc: '产品具备抗腐蚀的特点，使用寿命更长',
             img: 'solution5.png'
           },
           {
